@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+
+    <script
+            type="text/javascript"
+            src="resources/js/jquery-3.6.0.min.js"
+    ></script>
+
+    <script type="text/javascript">
+        function highlight() {
+            $('#list01 > li').eq(0).css('background-color', 'skyblue');
+        }
+
+        $(function () {
+            $('img').click(function () {
+                alert('이미지를 클릭했습니다.!!');
+                $(this).hide();
+            });
+        });
+
+        function showImg() {
+            $('img').show();
+        }
+
+        function resizeImg() {
+            $('img').css({width: '100px', height: '100px'}).css('opacity', '0.5');
+        }
+
+        function addImg() {
+            $('img').last().after("<img src='resources/image/img02.png' />");
+        }
+
+        function toggleImg() {
+            $('img').toggle();
+        }
+    </script>
+</head>
+<body>
+<h1>jquery</h1>
+
+<ul id="list01">
+    <li>1.css 선택자 표현식</li>
+    <li>2.DOM 탐색 메서드</li>
+    <li>3.이벤트 메서드</li>
+    <li>4.이펙트 메서드</li>
+    <li>5.ajax</li>
+</ul>
+<button onclick="highlight();">리스트!</button>
+
+<hr/>
+
+<button onclick="showImg();">이미지 보이기</button>
+<button onclick="resizeImg();">이미지 축소</button>
+<button onclick="addImg();">이미지 추가</button>
+<button onclick="toggleImg();">이미지 숨기기/보이기</button>
+
+<br/>
+
+<div>
+    <img alt="test" src="resources/image/img01.png"/>
+</div>
+</body>
+</html>

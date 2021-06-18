@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+    <style type="text/css">
+        a {
+            font-weight: bold;
+            color: #000000;
+        }
+
+        #box {
+            background-color: skyblue;
+            width: 100px;
+            height: 100px;
+            position: relative;
+        }
+    </style>
+
+    <script
+            type="text/javascript"
+            src="resources/js/jquery-3.6.0.min.js"
+    ></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $('.run').click(function () {
+                $('#box')
+                    .animate({opacity: '0.1', left: '400px'}, 1000)
+                    .animate(
+                        {opacity: '0.4', top: '160px', width: '20px', height: '20px'},
+                        'slow'
+                    )
+                    .animate(
+                        {
+                            opacity: '1',
+                            backgroundColor: 'lime',
+                            left: '0px',
+                            width: '100px',
+                            height: '100px',
+                        },
+                        'fast'
+                    )
+                    .animate({top: '0px'}, 'fast')
+                    .slideUp()
+                    .slideDown('slow'); // $("#box")를 리턴하기 때문에 가능, backgroundColor는 사용 불가능 (특정 plugin 필요)
+            });
+        });
+    </script>
+</head>
+<body>
+<p><a href="#" class="run">Run</a></p>
+
+<div id="box"></div>
+</body>
+</html>
